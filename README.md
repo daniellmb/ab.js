@@ -42,7 +42,6 @@ The library consists of two parts the A/B tester (ab.js) and the logger (log.js)
 
 - Tested Environments
   - ES5
-  - Development (console, etc.) 
   - Safari
   - Google Chrome
   - Internet Explorer
@@ -62,7 +61,7 @@ By default the two methods are assigned to the `window` object under the namespa
 - **AB.test** *(`Array` variants, `Number` frequency)*
 
   - summary: 
-    - Returns a cryptographically random test variant or null based on how frequently you wan to run the a/b tests. Important! the test frequency must be a float between zero and one. To keep the function as light as possible there is no idiot-proofing, if you pass in bad data I'm not fixing it for you :-)
+    - Returns a cryptographically random test variant or null based on how frequently you want to run the a/b tests. Important! the test frequency must be a float between zero and one. To keep the function as light as possible there is no idiot-proofing, if you pass in bad data I'm not fixing it for you :-)
   
   - example:
     - Run an A/B test on the values red, green and refactor. The variable "ab" will always be either red or green or refactor, but never null because the frequency is set to 1 (always run the test).
@@ -88,7 +87,7 @@ By default the two methods are assigned to the `window` object under the namespa
 - **AB.log** *(`Object` data, `String` url, `Function` callback)*
 
   - summary:
-        - The log method uses an image request to send data to your servers. This allows the code to work even on different websites and protocols by avoiding the cross-origin security restrictions with using AJAX. In the current version of this library you cannot include an "?" in the url as one is added for you. However, if this an issue for you feel free to submit a pull request, as the code can easily be refactored to allow that.
+        - The log method uses an image request to send data to your servers. This allows the code to work even on different websites and protocols by avoiding the cross-origin security restrictions with using AJAX.
 
   - example:
     - send foo=bar to example.com
@@ -98,10 +97,10 @@ By default the two methods are assigned to the `window` object under the namespa
       ```
       
   - data: `Object`
-    - required: a number ranging from 0 to 255 indicating the amount of red
+    - required: a JSON object of any data you want to log.
 
   - url: `String`
-    - required: a number ranging from 0 to 255 indicating the amount of green
+    - required: The url you want to send the data to, cross-domain request allowed! Note: currently you cannot include a "?" in the url as one is added for you.
 
   - callback: `Function`
     - optional: a function to be called when the log request fails or succeeds. Because all pending requests are canceled when the page is unloaded, this callback is particularly useful when you need ensure something is logged before leaving the page. An event object is provided to the callback
