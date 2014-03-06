@@ -72,10 +72,10 @@ By default the two methods are assigned to the `window` object under the namespa
       ```
 
   - variants: `Array`
-    - array of a/b test variants, can be any valid data type such as *Strings, Numbers, Booleans, Object, Arrays, Functions* etc.
+    - required: an array of a/b test variants, can be any valid data type such as *Strings, Numbers, Booleans, Object, Arrays, Functions* etc.
   
   - frequency: `Number`
-    - specifically a `float` between zero (0) and one (1), for example:
+    - required: a `float` between zero (0) and one (1), for example:
       - `1` will always run the a/b test
       - `0.5` will run the test 50% of the time
       - `0.2` will run the test two out of ten times
