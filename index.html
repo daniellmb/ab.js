@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Daniel Lamb">
+    <title>A/B Test Example</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>A/B Test Example</h1>
+        <p class="lead">
+          Typically you will only run the test once such as when you are rendering the UI. This 
+          contrived example will run an A/B test every second on the button below using a 
+          list of seven possible variants.</p>
+          <button id="example" type="button" class="btn btn-lg btn-default">
+            <span class="glyphicon glyphicon-star"></span> Star this Repository!
+          </button>
+      </div>
+
+    </div>
+    
+    <!-- run a simple a/b test -->
+    <script src="ab.js"></script>
+    <script>
+    var cssClass;
+    setInterval(function() {
+      
+      // run a/b test to select css class name
+      cssClass = AB.test(['default','primary','success','info','warning','danger','link'], 1);
+      
+      // update ui
+      document.getElementById('example').className = 'btn btn-lg btn-' + cssClass;
+
+      // log variant shown
+      //AB.log({shown:cssClass}, "http://www.example.com/log");
+    }, 1000);
+    </script>
+
+    <!-- pretend to log the test results -->
+    <script src="log.js"></script>
+    <script>
+    // listen for click events on the button
+    document.getElementById('example').onclick = function () {
+      
+      // log variant chosen
+      // use optional callback to ensure the page is not left before log completes
+      AB.log({chose:cssClass}, "http://www.example.com/log", function(e) {
+
+        // example of checking the event type
+        if (e.type === "error") {
+          // unable to log a/b test results :(
+        } else {
+          // a/b test results logged! :)
+        }
+
+        // continue to the repo
+        location = 'https://github.com/daniellmb/ab.js';
+      });
+    };
+    </script>
+  </body>
+</html>
