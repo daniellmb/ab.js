@@ -61,7 +61,7 @@ By default the two methods are assigned to the `window` object under the namespa
 - **AB.test** *(`Array` variants, `Number` frequency)*
 
   - summary: 
-    - Returns a cryptographically random test variant or null based on how frequently you want to run the a/b tests. Important! the test frequency must be a float between zero and one. To keep the function as light as possible there is no idiot-proofing, if you pass in bad data I'm not fixing it for you :-)
+    - Returns a cryptographically random test variant or null based on how frequently you want to run the a/b tests. Important! the test frequency must be a float between 0.0001 and 1. To keep the function as light as possible there is no idiot-proofing, if you pass in bad data I'm not fixing it for you :-)
   
   - example:
     - Run an A/B test on the values red, green and refactor. The variable "ab" will always be either red or green or refactor, but never null because the frequency is set to 1 (always run the test).
@@ -75,7 +75,7 @@ By default the two methods are assigned to the `window` object under the namespa
     - required: an array of a/b test variants, can be any valid data type such as *Strings, Numbers, Booleans, Object, Arrays, Functions* etc.
   
   - frequency: `Number`
-    - required: a `float` between zero (0) and one (1), for example:
+    - required: a `float` between 0.0001 and 1, for example:
       - `1` will always run the a/b test
       - `0.5` will run the test 50% of the time
       - `0.2` will run the test two out of ten times
