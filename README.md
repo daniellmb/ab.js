@@ -79,7 +79,7 @@ By default the two methods are assigned to the `window` object under the namespa
       - `1` will always run the a/b test
       - `0.5` will run the test 50% of the time
       - `0.2` will run the test two out of ten times
-      - `0.001` will run the test thousandth of the time
+      - `0.001` will run the test one thousandth of the time
 
   - returns: `Value` or `Null`
     - a `value` from the variants array or `null` if the test should not be run.
