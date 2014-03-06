@@ -5,6 +5,8 @@ Make user-driven decisions with this **214 byte** A/B test micro-library, that i
 
 The library consists of two parts the A/B tester (ab.js) and the logger (log.js). These are separate to enable you to choose the best tools based on your environment. Say for example you already have jQuery on the page and want to use that for logging data, great, then all you need to include is ab.js.
 
+![Alt text](img/demo.gif)
+
 ### How to use
 
 ```javascript
