@@ -1,6 +1,6 @@
 (function (window, as) {
 
-  // onetime branching based on what encoding the device supports
+  // one time branching based on what encoding the device supports
   var encode = typeof encodeURIComponent == "function" ? encodeURIComponent : escape;
 
   // call the given function on each property in the object
