@@ -1,7 +1,8 @@
 ((window, as) ->
   
-  # onetime branching based on what encoding the device supports
-  
+  # one time branching based on what encoding the device supports
+  encode = (if typeof encodeURIComponent is "function" then encodeURIComponent else escape)
+    
   # call the given function on each property in the object
   forEachCall = (obj, func) ->
     
@@ -26,7 +27,6 @@
 
     # return param list
     params
-  encode = (if typeof encodeURIComponent is "function" then encodeURIComponent else escape)
   
   # export A/B Log to global scope
   window[as].log = (data, url, callback) ->
