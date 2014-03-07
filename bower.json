@@ -1,0 +1,17 @@
+{
+  "name": "ab.js",
+  "description": "0.2kb A/B/n Testing micro-library",
+  "version": "0.0.2",
+  "keywords": [
+    "ab test",
+    "a/b test",
+    "split test"
+  ],
+  "author": "Daniel Lamb <daniellmb.com>",
+  "dependencies": {},
+  "main": "ab.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daniellmb/minpubsub.git"
+  }
+}

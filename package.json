@@ -1,0 +1,44 @@
+{
+  "name": "ab.js",
+  "version": "0.0.2",
+  "description": "0.2kb A/B/n Testing micro-library",
+  "keywords": [
+    "ab test",
+    "a/b test",
+    "split test"
+  ],
+  "homepage": "https://github.com/daniellmb/ab.js.git",
+  "author": "Daniel Lamb (http://daniellmb.com)",
+  "maintainers": [
+    
+  ],
+  "contributors": [
+
+  ],
+  "bugs": {
+    "url": "https://github.com/daniellmb/ab.js/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://daniellmb.mit-license.org"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daniellmb/ab.js.git"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-coffeelint": "latest",
+    "grunt-complexity": "latest",
+    "load-grunt-tasks": "latest"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}

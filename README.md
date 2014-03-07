@@ -1,14 +1,13 @@
-ab.js
-=====
+# ab.js [![Build Status](https://api.travis-ci.org/daniellmb/ab.js.png)](https://travis-ci.org/daniellmb/ab.js) [![Dependency Status](https://gemnasium.com/daniellmb/ab.js.png)](https://gemnasium.com/daniellmb/ab.js#tab-dev_dependencies)
 
 Make user-driven decisions with this **214 byte** A/B test micro-library, that is completely self contained with no external dependencies. Use ab.js to choose a *cryptographically random* A/B test variant and log the results to your database. How you analyze the actionable data is up to you. Testing different versions of copy text, layouts, images and colors in the browser has never been more simple.
 
 The library consists of two parts the A/B tester (ab.js) and the logger (log.js). These are separate to enable you to choose the best tools based on your environment. Say for example you already have jQuery on the page and want to use that for logging data, great, then all you need to include is ab.js.
 
-###[Check out a Live Example](http://daniellmb.github.io/ab.js/)
-[![A/B Testing Demo](http://daniellmb.github.io/ab.js/img/demo.gif "A/B Testing Demo")](http://daniellmb.github.io/ab.js/)
+### [Check out a Live Example](http://daniellmb.github.io/ab.js/)
+[![A/B Testing Demo](http://daniellmb.github.io/ab.js/demo/demo.gif "A/B Testing Demo")](http://daniellmb.github.io/ab.js/)
 
-####[Run the unit tests](http://daniellmb.github.io/ab.js/specs.htm)
+#### [Run the unit tests](http://daniellmb.github.io/ab.js/specs/)
 
 ### How to use
 

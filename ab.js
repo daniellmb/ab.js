@@ -1,1 +1,1 @@
-(function(c,a){c[a]=c[a]||{};c[a].test=function(a,e){var b=Math.random();if(1E-4<b&&(b=Math.random(),b<e)){try{var d=new Uint16Array(1);c.crypto.getRandomValues(d);b=d[0]/65536}catch(f){b=Math.random()}return a[Math.floor(b*a.length)]}return null}})(window,"AB");
+(function(c,a){c[a]=c[a]||{};c[a].test=function(a,e){var b=Math.random();if(1E-4<b&&(b=Math.random(),b<e)){try{var d=new Uint16Array(1);c.crypto.getRandomValues(d);b=d[0]/65536}catch(f){b=Math.random()}return a[Math.floor(b*a.length)]}return null}})(window,'AB');
