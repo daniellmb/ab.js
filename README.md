@@ -7,7 +7,7 @@ The library consists of two parts the A/B tester (ab.js) and the logger (log.js)
 ### [Check out a Live Example](http://daniellmb.github.io/ab.js/demo/)
 [![A/B Testing Demo](http://daniellmb.github.io/ab.js/demo/demo.gif "A/B Testing Demo")](http://daniellmb.github.io/ab.js/demo/)
 
-#### [Run the unit tests](http://daniellmb.github.io/ab.js/specs/)
+#### [Run the unit tests](http://daniellmb.github.io/ab.js/spec/)
 
 ### How to use
 
