@@ -22,28 +22,29 @@
   }
 
   // convert object to query string params
-  function toURL(obj) {
-    var params = '';
+  function toParams(obj) {
+    var params = [];
 
     // loop though the object properties
     forEachCall(obj, function (value, property) {
 
       // ignore things like undefined
       if (value || value === 0) {
-        // encode values and append
-        params += '&' + property + '=' + encode(value);
+        
+        // encode and append
+        params.push(encode(property) + '=' + encode(value));
       }
     });
 
     // return param list
-    return params;
+    return params.join('&');
   }
 
   // export A/B Log to global scope
   window[as].log = function (/*Object*/ data, /*String*/ url, /*Function*/ callback) {
 
     // convert JSON object to query string params
-    data = url + '?' + toURL(data);
+    data = url + (url.indexOf('?') !== -1 ? '&':'?') + toParams(data);
 
     // take the top 2000 characters
     data = data.substring(0, 2000);

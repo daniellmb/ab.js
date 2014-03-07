@@ -99,7 +99,7 @@ By default the two methods are assigned to the `window` object under the namespa
     - required: a JSON object of any data you want to log.
 
   - url: `String`
-    - required: The url you want to send the data to, cross-domain request allowed! Note: currently you cannot include a "?" in the url as one is added for you.
+    - required: The url you want to send the data to, cross-domain requests are allowed!
 
   - callback: `Function`
     - optional: a function to be called when the log request fails or succeeds. Because all pending requests are canceled when the page is unloaded, this callback is particularly useful when you need ensure something is logged before leaving the page. An event object is provided to the callback

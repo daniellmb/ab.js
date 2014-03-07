@@ -13,31 +13,30 @@
     for prop of obj
       
       # restrict to only immediate properties of the object (exclude inherited)
-      
       # call the function passing in the value and property
       func.call null, obj[prop], prop  if Object::hasOwnProperty.call(obj, prop)
-    return
   
   # convert object to query string params
-  toURL = (obj) ->
-    params = ''
+  toParams = (obj) ->
+    params = []
     
     # loop though the object properties
     forEachCall obj, (value, property) ->
       
       # ignore things like undefined
       
-      # encode values and append
-      params += '&' + property + '=' + encode(value)  if value or value is 0
-    
+      # encode and append
+      params.push encode(property) + '=' + encode(value)  if value or value is 0
+
     # return param list
-    params
+    params.join '&'
+
   
   # export A/B Log to global scope
   window[as].log = (data, url, callback) ->
     
     # convert JSON object to query string params
-    data = url + '?' + toURL(data)
+    data = url + ((if url.indexOf('?') isnt -1 then '&' else '?')) + toParams(data)
     
     # take the top 2000 characters
     data = data.substring(0, 2000)

@@ -20,6 +20,28 @@ describe('AB.log', function () {
 
     describe('when logging data', function () {
 
+        it('should handle log urls that do not include "?"', function () {
+            // arrange
+            var img = {},
+                url = "http://www.example.com";
+            spyOn(document, 'createElement').andReturn(img);
+            // act
+            AB.log({foo:"bar"}, url);
+            // assert
+            expect(img.src).toBe(url+"?foo=bar");
+        });
+
+        it('should handle log urls that already include "?"', function () {
+            // arrange
+            var img = {},
+                url = "http://www.example.com?a=b";
+            spyOn(document, 'createElement').andReturn(img);
+            // act
+            AB.log({foo:"bar"}, url);
+            // assert
+            expect(img.src).toBe(url+"&foo=bar");
+        });
+
         it('should convert JSON object to encoded query string params', function () {
             // arrange
             var img = {},
@@ -28,14 +50,14 @@ describe('AB.log', function () {
             // act
             AB.log({foo:"a b"}, url);
             // assert
-            expect(img.src).toBe(url+"?&foo=a%20b");
+            expect(img.src).toBe(url+"?foo=a%20b");
         });
 
         it('should limit the url to the 2,000 characters max', function () {
             // arrange
             var img = {},
                 url = "http://www.example.com",
-                expected = url+"?&foo="+new Array(1973).join('_');
+                expected = url+"?foo="+new Array(1974).join('_');
             spyOn(document, 'createElement').andReturn(img);
             // act
             AB.log({foo:new Array(2000).join('_')}, url);
@@ -50,7 +72,7 @@ describe('AB.log', function () {
                 url = "http://www.example.com";
             spyOn(document, 'createElement').andReturn(img);
             // act
-            AB.log({foo:"a b"}, url);
+            AB.log({foo:"bar"}, url);
             // assert
             expect(document.createElement.callCount).toBe(1);
         });
@@ -62,7 +84,7 @@ describe('AB.log', function () {
                 callBack = function(){};
             spyOn(document, 'createElement').andReturn(img);
             // act
-            AB.log({foo:"a b"}, url, callBack);
+            AB.log({foo:"bar"}, url, callBack);
             // assert
             expect(img.onerror === callBack).toBe(true);
             expect(img.onload === callBack).toBe(true);
