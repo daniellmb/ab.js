@@ -12,6 +12,6 @@
   "main": "ab.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/daniellmb/minpubsub.git"
+    "url": "git://github.com/daniellmb/ab.js.git"
   }
 }
