@@ -2,6 +2,8 @@
 
 Make user-driven decisions with this **214 byte** A/B test micro-library, that is completely self contained with no external dependencies. Use ab.js to choose a *cryptographically random* A/B test variant and log the results to your database. How you analyze the actionable data is up to you. Testing different versions of copy text, layouts, images and colors in the browser has never been more simple.
 
+> "Write programs that do one thing and do it well." — Doug McIlroy, Unix philosophy 
+
 The library consists of two parts the A/B tester (ab.js) and the logger (log.js). These are separate to enable you to choose the best tools based on your environment. Say for example you already have jQuery on the page and want to use that for logging data, great, then all you need to include is ab.js.
 
 ### [Check out a Live Example](http://daniellmb.github.io/ab.js/demo/)
